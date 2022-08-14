@@ -1,4 +1,5 @@
 
+var PropTypes = require('prop-types'); // ES5 with npm
 
 const FeedbackOptions = ({options, onLeaveFeedback}) => {
 
@@ -24,6 +25,15 @@ return (
 
     
 )
+
+
+}
+
+
+FeedbackOptions.propTypes = {
+        options: PropTypes.array,
+        onLeaveFeedback: PropTypes.func
+
 }
 
 

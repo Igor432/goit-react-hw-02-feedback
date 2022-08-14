@@ -3,6 +3,7 @@ import '../feedback/feedback.css'
 import FeedbackOptions from "./FeedbackOptions";
 import Statistics from "./Statistics";
 
+
 class Feedback extends Component {
 
     state = {
@@ -27,28 +28,6 @@ onLeaveFeedback = (key) => {
 
   };
 
-
-
-/*
-
-      addNeutral = () => {
-       
-        this.setState(prevState => {
-            return {neutral: prevState.neutral + 1}
-      }, this.countTotalFeedback)
-      this.countPositiveFeedbackPercentage()
-
-      };
-
-      addBad = () => {
-        this.setState(prevState => {
-            return {bad: prevState.bad + 1}
-         
-      }, this.countTotalFeedback)
-      this.countPositiveFeedbackPercentage()
-
-      };
-*/
     
       countTotalFeedback() {
      this.totalCount = this.state.good + this.state.neutral + this.state.bad
@@ -79,6 +58,9 @@ render ()  {
 
       
     }
+
+
+
 
 
 
