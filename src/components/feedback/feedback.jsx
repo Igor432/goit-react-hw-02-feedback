@@ -2,6 +2,7 @@ import { Component } from "react";
 import '../feedback/feedback.css'
 import FeedbackOptions from "./FeedbackOptions";
 import Statistics from "./Statistics";
+var PropTypes = require('prop-types'); // ES5 with npm
 
 
 class Feedback extends Component {
@@ -61,7 +62,12 @@ render ()  {
 
 
 
+Feedback.propTypes = {
+good: PropTypes.number,
+neutral: PropTypes.number,
+bad: PropTypes.number,
 
+}
 
 
 
