@@ -1,0 +1,26 @@
+.main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40;
+    color: #010101;
+}
+
+.feedback_button {
+    margin-left: 20px;
+    background-color: white;
+    border-radius: 20px;
+    font-size: 29px;
+    padding: 5px 10px 5px 10px;
+}
+
+.statistics_item {
+    list-style: none;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+p {
+    font-size: 26px;
+}

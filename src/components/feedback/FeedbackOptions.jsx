@@ -1,41 +1,30 @@
+import PropTypes from 'prop-types'; // ES6
+import style from '../feedback/feedback.module.css';
 
-var PropTypes = require('prop-types'); // ES5 with npm
+const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+  const optika = Object.keys(options);
 
-const FeedbackOptions = ({options, onLeaveFeedback}) => {
+  return (
+    <div>
+      <p className={style.p}>Please, leave feedback</p>
 
-const optika = Object.keys(options)
-
-
-
-
-return (    
-    
-        <div>
-        <p>Please, leave feedback</p>
-
-{optika.map(optio => (
-        <button class="feedback-button" type="button" key={optio}  onClick={() => onLeaveFeedback(optio)}>{optio}</button>
-      
-
-        ))}
-
-        
-            </div>
-
-
-    
-)
-
-
-}
-
+      {optika.map(optio => (
+        <button
+          className={style.feedback_button}
+          type="button"
+          key={optio}
+          onClick={() => onLeaveFeedback(optio)}
+        >
+          {optio}
+        </button>
+      ))}
+    </div>
+  );
+};
 
 FeedbackOptions.propTypes = {
-        options: PropTypes.array,
-        onLeaveFeedback: PropTypes.func
-
-}
-
-
+  options: PropTypes.object.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
 
 export default FeedbackOptions;
