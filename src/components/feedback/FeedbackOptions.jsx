@@ -4,7 +4,6 @@ import good from '../icons/checked.png';
 import bad from '../icons/close.png';
 import neutral from '../icons/confused.png';
 
-
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   const optika = Object.keys(options);
 
@@ -15,23 +14,28 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   };
 
   return (
-    <div >
+    <div>
       <p className={style.p}>Please, leave feedback</p>
-<ul className={style.button_list}>
-      {optika.map(optio => (
-        <li className={style.button_item}     key={optio}>
-        <button
-          className={style.feedback_button}
-          type="button"
-      
-          onClick={() => onLeaveFeedback(optio)}
-        >
-          <img src={img[optio]} alt="" width="50" height="auto" className={style.option_image}/>
-          <br />
-          {optio}
-        </button>
-        </li>
-      ))}
+      <ul className={style.button_list}>
+        {optika.map(optio => (
+          <li className={style.button_item} key={optio}>
+            <button
+              className={style.feedback_button}
+              type="button"
+              onClick={() => onLeaveFeedback(optio)}
+            >
+              <img
+                src={img[optio]}
+                alt=""
+                width="50"
+                height="auto"
+                className={style.option_image}
+              />
+              <br />
+              {optio}
+            </button>
+          </li>
+        ))}
       </ul>
     </div>
   );
