@@ -1,10 +1,11 @@
 import { Component } from 'react';
 import FeedbackOptions from './FeedbackOptions';
 import Statistics from './Statistics';
+import Notification from './Notification';
 
 class Feedback extends Component {
   state = {
-    good: 0,
+    good: 0, 
     neutral: 0,
     bad: 0,
   };
@@ -13,10 +14,6 @@ class Feedback extends Component {
     totalCount = 0;
     PositiveFeedbackPercentage = 0;
   
-
-
-   
-
 
   onLeaveFeedback = key => {
 
@@ -27,8 +24,7 @@ class Feedback extends Component {
       return { [key]: prevState[key] + 1 };
     
     } );
- 
-    console.log(this.PositiveFeedbackPercentage);
+
   };
 
 
@@ -41,7 +37,6 @@ class Feedback extends Component {
   countPositiveFeedbackPercentage(total) {
 
     this.PositiveFeedbackPercentage = this.state.good / total * 100;
-console.log(this.PositiveFeedbackPercentage)
   }
   
 
@@ -56,14 +51,15 @@ this.countPositiveFeedbackPercentage(this.totalCount)
           options={this.state}
           onLeaveFeedback={this.onLeaveFeedback}
         />
+        <Notification message ='There is no Feedback...'/>
         
-        No Statistics</div>
+        </div>
       )
     }
 
     return (
       <div>
-        <FeedbackOptions
+        <FeedbackOptions 
           options={this.state}
           onLeaveFeedback={this.onLeaveFeedback}
         />
