@@ -15,7 +15,7 @@ class Feedback extends Component {
   
 
 
-
+   
 
 
   onLeaveFeedback = key => {
@@ -26,10 +26,11 @@ class Feedback extends Component {
     this.setState(prevState => {
       return { [key]: prevState[key] + 1 };
     
-    }, this.countPositiveFeedbackPercentage );
-  
+    } );
+ 
     console.log(this.PositiveFeedbackPercentage);
   };
+
 
   countTotalFeedback() {
     this.totalCount = this.totalCount + 1;
@@ -37,14 +38,17 @@ class Feedback extends Component {
   }
 
   
-  countPositiveFeedbackPercentage() {
+  countPositiveFeedbackPercentage(total) {
 
-    this.PositiveFeedbackPercentage = this.state.good / this.totalCount * 100;
-    
+    this.PositiveFeedbackPercentage = this.state.good / total * 100;
+console.log(this.PositiveFeedbackPercentage)
   }
   
 
   render() {
+
+this.countPositiveFeedbackPercentage(this.totalCount)
+
     if (this.totalCount === 0) {
       return (
         <div>
