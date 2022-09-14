@@ -15,7 +15,6 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 
   return (
     <div>
-     
       <ul className={style.button_list}>
         {optika.map(optio => (
           <li className={style.button_item} key={optio}>

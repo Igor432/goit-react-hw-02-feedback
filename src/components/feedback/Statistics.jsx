@@ -4,7 +4,6 @@ import style from '../feedback/feedback.module.css';
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
     <div>
-     
       <ul className={style.statistics_list}>
         <li className={style.statistics_item}>Good: {good}</li>
         <li className={style.statistics_item}>Neutral: {neutral}</li>
