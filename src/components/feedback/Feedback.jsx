@@ -2,6 +2,7 @@ import { Component } from 'react';
 import FeedbackOptions from './FeedbackOptions';
 import Statistics from './Statistics';
 import Notification from './Notification';
+import Section from './Section';
 
 class Feedback extends Component {
   state = {
@@ -9,8 +10,6 @@ class Feedback extends Component {
     neutral: 0,
     bad: 0,
   };
-
-
 
   onLeaveFeedback = key => {
     this.countTotalFeedback();
@@ -21,36 +20,44 @@ class Feedback extends Component {
   };
 
   countTotalFeedback() {
-    const result = this.state.good + this.state.neutral + this.state.bad
+    const result = this.state.good + this.state.neutral + this.state.bad;
 
-    return result
+    return result;
   }
 
   countPositiveFeedbackPercentage() {
-    const result  = this.state.good / this.countTotalFeedback() * 100;
-    return result
+    const result = (this.state.good / this.countTotalFeedback()) * 100;
+    return result;
   }
 
-  render() {
-    const total = this.countTotalFeedback()
-    const totalPositive = this.countPositiveFeedbackPercentage();
 
- 
+  const 
+
+  render() {
+    const total = this.countTotalFeedback();
+    const totalPositive = this.countPositiveFeedbackPercentage();
 
     return (
       <div>
+        <Section title='Leave Feedback'>
         <FeedbackOptions
           options={this.state}
           onLeaveFeedback={this.onLeaveFeedback}
         />
-{ total ===0 ? <Notification message="There is no Feedback..." /> :      <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          total={total}
-          positivePercentage={totalPositive}
-        />}
-   
+        </Section>
+        {total === 0 ? (
+          <Notification message="There is no Feedback..." />
+        ) : (
+          <Section title='Statistics'>
+          <Statistics
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            total={total}
+            positivePercentage={totalPositive}
+          />
+          </Section>
+        )}
       </div>
     );
   }
